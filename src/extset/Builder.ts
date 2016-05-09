@@ -1,9 +1,9 @@
-import {Builder} from '../core/Builder';
+import {Builder as CoreBuilder} from '../core/Builder';
 import {EMPTY_SET} from '../core/EMPTY_SET';
 import {ExtSet} from './ExtSet';
 import {hash} from '../core/hash';
 
-export class ExtSetBuilder<T> implements Builder<ExtSet<T>>
+export class Builder<T> implements CoreBuilder<ExtSet<T>>
 {
 	private hashMap: { [hash: string]: T; } = {};
 	public add(...elements: T[])

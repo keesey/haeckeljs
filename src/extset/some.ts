@@ -1,0 +1,19 @@
+import {ExtSet} from './ExtSet';
+
+export function some<T>(set: ExtSet<T>, f: (element: T) => boolean): boolean
+{
+	if (set.size === Infinity)
+	{
+		throw new Error('Cannot traverse domain sets.');
+	}
+	/* tslint:disable:forin */
+	for (let h in set.hashMap)
+	/* tslint:enable:forin */
+	{
+		if (f.call(set.hashMap[h]))
+		{
+			return true;
+		}
+	}
+	return false;
+}
