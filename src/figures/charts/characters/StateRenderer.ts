@@ -3,6 +3,7 @@ import {Builder} from '../../../dom/Builder';
 import {Chart} from './Chart';
 import {NAMESPACE} from '../../../dom/svg/NAMESPACE';
 import {Renderer} from '../../Renderer';
+import {STATE_LABEL_COLOR_CUTOFF} from './STATE_LABEL_COLOR_CUTOFF';
 import {WHITE} from '../../colors/WHITE';
 import {hex} from '../../colors/hex';
 
