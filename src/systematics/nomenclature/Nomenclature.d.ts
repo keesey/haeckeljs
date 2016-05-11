@@ -1,5 +1,5 @@
-import {ExtSet} from '../extset/ExtSet';
-import {Taxic} from '../taxonomy/Taxic';
+import {Set} from '../../sets/extensional/Set';
+import {Taxic} from '../taxic/Taxic';
 
 export interface Nomenclature
 {
@@ -7,6 +7,6 @@ export interface Nomenclature
 	{
 		[name: string]: Taxic;
 	};
-	names: ExtSet<string>;
-	taxa: ExtSet<Taxic>;
+	names: Set<string>;
+	taxa: Set<Taxic>;
 }

@@ -1,11 +1,11 @@
-import {Coords} from '../geography/Coords';
-import {ExtSet} from '../extset/ExtSet';
 import {Model} from '../core/Model';
 import {Range} from '../range/Range';
+import {Region} from '../geography/regions/Region';
+import {Set} from '../../sets/extensional/Set';
 
 export interface Occurrence extends Model
 {
 	count: Range;
-	geo: ExtSet<Coords[]>;
+	geo: Set<Region>;
 	time: Range;
 }

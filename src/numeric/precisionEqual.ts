@@ -1,6 +1,6 @@
-import {precision} from './precision';
+import {PRECISION} from './PRECISION';
 
 export function precisionEqual(a: number, b: number): boolean
 {
-	return Math.round(a * precision) / precision === Math.round(b * precision) / precision;
+	return Math.round(a * PRECISION) / PRECISION === Math.round(b * PRECISION) / PRECISION;
 }

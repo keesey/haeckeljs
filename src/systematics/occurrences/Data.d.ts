@@ -1,9 +1,9 @@
-import {Data as GeoData} from '../geography/Data';
-import {Data as RangeData} from '../range/Data';
+import {Data as GeographyData} from '../geography/Data';
+import {Data as RangeData} from '../../numeric/ranges/Data';
 
-export interface OccurrenceData
+export interface Data
 {
 	count?: RangeData;
-	geo?: GeoData;
+	geo?: GeographyData;
 	time?: RangeData;
 }

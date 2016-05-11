@@ -1,4 +1,4 @@
-import {Range} from '../range/Range';
+import {Range} from '../sets/ranges/Range';
 
 export interface Item<T>
 {

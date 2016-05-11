@@ -1,5 +1,5 @@
-import {Set} from '../core/Set';
-import {Point} from '../point/Point';
+import {Point} from '../points/Point';
+import {Set} from '../../sets/Set';
 
 export interface Ray extends Set
 {

@@ -1,5 +1,5 @@
-import {Builder} from '../core/Builder';
-import {Sources} from '../data/Sources';
+import {Builder} from '../Builder';
+import {Sources} from '../systematics/sources/Sources';
 
 export interface RenderOptions
 {

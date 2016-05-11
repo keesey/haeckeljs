@@ -1,10 +1,10 @@
 import {EmptySet} from './EmptySet';
-import {Point} from '../point/Point';
+import {Point} from '../geometry/points/Point';
 
-export const EMPTY_SET = (function ()
+export const EMPTY: EmptySet = (function ()
 {
 	const filter = (element: any) => false;
-	const e: EmptySet =
+	const empty: EmptySet =
 		{
 			angle: NaN,
 			area: 0,
@@ -35,6 +35,6 @@ export const EMPTY_SET = (function ()
 			y: NaN,
 			y2: NaN,
 		};
-	e.units = e.entities = e;
-	return Object.freeze(e);
+	empty.units = empty.entities = empty;
+	return Object.freeze(empty);
 })();

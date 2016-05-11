@@ -1,1 +1,1 @@
-export let precision = 1000000;
+export const PRECISION = 1000000;

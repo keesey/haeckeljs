@@ -1,6 +1,6 @@
-import {ExtSet} from './ExtSet';
+import {Set} from './Set';
 
-export function every<T>(set: ExtSet<T>, f: (element: T) => boolean): boolean
+export function every<T>(set: Set<T>, f: (element: T) => boolean): boolean
 {
 	if (set.size === Infinity)
 	{

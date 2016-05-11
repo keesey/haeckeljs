@@ -1,6 +1,6 @@
-import {ExtSet} from './ExtSet';
+import {Set} from './Set';
 
-export function forEach<T>(set: ExtSet<T>, f: (element: T) => any)
+export function forEach<T>(set: Set<T>, f: (element: T) => any)
 {
 	if (set.size === Infinity)
 	{

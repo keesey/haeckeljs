@@ -1,7 +1,7 @@
 import {Builder} from './Builder';
-import {ExtSet} from './ExtSet';
+import {Set} from './Set';
 
-export function map<X, Y>(set: ExtSet<X>, f: (element: X) => Y): ExtSet<Y>
+export function map<X, Y>(set: Set<X>, f: (element: X) => Y): Set<Y>
 {
 	if (set.size === Infinity)
 	{

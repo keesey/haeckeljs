@@ -1,6 +1,6 @@
-import {ExtSet} from './ExtSet';
+import {Set} from './Set';
 
-export function includes<T>(a: ExtSet<T>, b: ExtSet<T>): boolean
+export function includes<T>(a: Set<T>, b: Set<T>): boolean
 {
 	if (a.hash === b.hash)
 	{

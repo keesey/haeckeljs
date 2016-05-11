@@ -1,10 +1,10 @@
-import {Entity} from '../core/Entity';
-import {ExtSet} from '../extset/ExtSet';
-import {Set} from '../core/Set';
+import {Entity} from '../../entities/Entity';
+import {Set as ExtensionalSet} from '../../sets/extensional/Set';
+import {Set} from '../../sets/Set';
 
 export interface Taxic extends Set
 {
-	entities: ExtSet<Entity>;
+	entities: ExtensionalSet<Entity>;
 	isUnit: boolean;
-	units: ExtSet<Taxic>;
+	units: ExtensionalSet<Taxic>;
 }

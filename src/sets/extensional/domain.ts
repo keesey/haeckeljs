@@ -1,6 +1,6 @@
-import {ExtSet} from './ExtSet';
+import {Set} from './Set';
 
-export function domain<T>(hash: string): ExtSet<T>
+export function domain<T>(hash: string): Set<T>
 {
 	return Object.freeze({
 		empty: false,

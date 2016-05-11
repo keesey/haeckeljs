@@ -1,7 +1,7 @@
-import {ExtSet} from './ExtSet';
+import {Set} from './Set';
 import {create} from './create';
 
-export function read<T>(data: T | T[]): ExtSet<T>
+export function read<T>(data: T | T[]): Set<T>
 {
 	if (data === null || data === undefined)
 	{

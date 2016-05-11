@@ -1,7 +1,7 @@
-import {Entity} from '../core/Entity';
+import {Entity} from '../../entities/Entity';
 import {Inferrer} from './Inferrer';
-import {Range} from '../range/Range';
-import {Set} from '../core/Set';
+import {Range} from '../../numeric/ranges/Range';
+import {Set} from '../../sets/Set';
 
 export interface Character<S extends Set> extends Entity
 {

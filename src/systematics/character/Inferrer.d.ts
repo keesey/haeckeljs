@@ -1,7 +1,7 @@
-import {Set} from '../core/Set';
-import {WeightedStates} from './WeightedStates';
+import {Set} from '../../sets/Set';
+import {States} from './weighted/States';
 
 export interface Inferrer<S extends Set>
 {
-	average: (statesList: WeightedStates<S>[]) => S;
+	average: (statesList: States<S>[]) => S;
 }

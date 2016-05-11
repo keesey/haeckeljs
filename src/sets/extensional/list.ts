@@ -1,6 +1,6 @@
-import {ExtSet} from './ExtSet';
+import {Set} from './Set';
 
-export function list<T>(set: ExtSet<T>): T[]
+export function list<T>(set: Set<T>): T[]
 {
 	if (set.size === Infinity)
 	{

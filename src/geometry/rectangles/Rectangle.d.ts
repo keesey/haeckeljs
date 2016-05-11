@@ -1,4 +1,4 @@
-import {Set} from '../core/Set';
+import {Set} from '../../sets/Set';
 
 export interface Rectangle extends Set
 {

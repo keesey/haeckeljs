@@ -1,7 +1,7 @@
-import {ExtSet} from './ExtSet';
-import {hash} from '../core/hash';
+import {Set} from './Set';
+import {hash} from '../../hash';
 
-export function contains<T>(set: ExtSet<T>, element: T): boolean
+export function contains<T>(set: Set<T>, element: T): boolean
 {
 	if (set.size === Infinity)
 	{

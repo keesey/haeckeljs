@@ -1,9 +1,9 @@
-import {Builder as CoreBuilder} from '../core/Builder';
-import {EMPTY_SET} from '../core/EMPTY_SET';
-import {ExtSet} from './ExtSet';
-import {hash} from '../core/hash';
+import {Builder as BaseBuilder} from '.././../Builder';
+import {EMPTY} from '../EMPTY';
+import {Set} from './Set';
+import {hash} from '../../hash';
 
-export class Builder<T> implements CoreBuilder<ExtSet<T>>
+export class Builder<T> implements BaseBuilder<Set<T>>
 {
 	private hashMap: { [hash: string]: T; } = {};
 	public add(...elements: T[])
@@ -23,7 +23,7 @@ export class Builder<T> implements CoreBuilder<ExtSet<T>>
 		}
 		return this;
 	}
-	public addSet(elements: ExtSet<T>)
+	public addSet(elements: Set<T>)
 	{
 		/* tslint:disable:forin */
 		for (let h in elements.hashMap)
@@ -33,9 +33,9 @@ export class Builder<T> implements CoreBuilder<ExtSet<T>>
 		}
 		return this;
 	}
-	public build(): ExtSet<T>
+	public build(): Set<T>
 	{
-		const s: ExtSet<T> = {
+		const s: Set<T> = {
 			empty: false,
 			hash: '',
 			hashMap: {},
@@ -52,7 +52,7 @@ export class Builder<T> implements CoreBuilder<ExtSet<T>>
 		const n = hashes.length;
 		if (n === 0)
 		{
-			return EMPTY_SET;
+			return EMPTY;
 		}
 		Object.freeze(s.hashMap);
 		s.hash = '{' + hashes.sort().join(',') + '}';
@@ -75,7 +75,7 @@ export class Builder<T> implements CoreBuilder<ExtSet<T>>
 		}
 		return this;
 	}
-	public removeSet(elements: ExtSet<T>)
+	public removeSet(elements: Set<T>)
 	{
 		/* tslint:disable:forin */
 		for (let h in elements.hashMap)

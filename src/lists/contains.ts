@@ -1,8 +1,9 @@
-import {equal} from '../core/equal';
+import {equal} from '../equal';
 
 export function contains<T>(list: T[], element: T): boolean
 {
-	for (let i = 0, n = list.length; i < n; ++i)
+	const n = list.length;
+	for (let i = 0; i < n; ++i)
 	{
 		if (equal(list[i], element))
 		{

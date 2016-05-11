@@ -1,7 +1,7 @@
 import {Builder} from './Builder';
-import {ExtSet} from './ExtSet';
+import {Set} from './Set';
 
-export function union<T>(sets: ExtSet<T>[]): ExtSet<T>
+export function union<T>(sets: Set<T>[]): Set<T>
 {
 	const n = sets.length;
 	if (n === 0)

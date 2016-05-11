@@ -1,7 +1,7 @@
-import {ExtSet} from './ExtSet';
+import {Set} from './Set';
 import {list} from './list';
 
-export function singleMember<T>(set: ExtSet<T>): T
+export function singleMember<T>(set: Set<T>): T
 {
 	if (set.size !== 1)
 	{
