@@ -1,5 +1,5 @@
-import {EMPTY_SET} from '../core/EMPTY_SET';
 import {Builder} from './Builder';
+import {EMPTY_SET} from '../core/EMPTY_SET';
 import {ExtSet} from './ExtSet';
 import {equal} from '../core/equal';
 
