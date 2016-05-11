@@ -9,7 +9,7 @@ function drawUnknown(element: Builder, area: Rectangle, spacingH: number, spacin
 {
 	// :TODO: Customizable renderer
 	const group = element
-		.child(SVG_NS, 'g')
+		.child(NAMESPACE, 'g')
 		.attrs({
 			'font-size': fontSize + 'px',
 			'font-weight': 'bold',
