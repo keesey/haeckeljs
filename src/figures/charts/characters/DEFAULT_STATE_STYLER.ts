@@ -1,8 +1,9 @@
 import {BLACK} from '../../colors/BLACK';
+import {StateStyler} from './StateStyler';
 import {Style} from '../../../dom/Style';
 import {createRGB} from '../../colors/createRGB';
 
-export const DEFAULT_STATE_STYLER = function(state: number, totalStates: number): Style
+export const DEFAULT_STATE_STYLER: StateStyler = (state: number, totalStates: number) =>
 {
 	let color = BLACK;
 	if (state > 0 && totalStates > 0)
@@ -18,4 +19,4 @@ export const DEFAULT_STATE_STYLER = function(state: number, totalStates: number)
 		'stroke-opacity' : 1,
 		'stroke-width': '1px',
 	};
-}
+};
