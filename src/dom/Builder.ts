@@ -7,7 +7,7 @@ export class Builder implements IBuilder<Element>
 	private _parent: ElementBuilder;
 	private const children: ElementBuilder[] = [];
 	private element: Element;
-    private uri: string;
+	private uri: string;
 	constructor(document: Document, element: Element);
 	constructor(document: Document, uri: string, localName: string);
 	constructor(document: Document, name: string);
