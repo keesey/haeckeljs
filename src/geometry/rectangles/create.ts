@@ -1,4 +1,5 @@
 import {Rectangle} from './Rectangle';
+import {EMPTY} from '../sets/EMPTY';
 
 export function create(x: number, y: number, width: number, height: number): Rectangle
 {
@@ -18,10 +19,15 @@ export function create(x: number, y: number, width: number, height: number): Rec
 	{
 	    throw new Error('Invalid height: ' + String(height) + '.');
 	}
+	const area = width * height;
+	if (area === 0)
+	{
+		return EMPTY;
+	}
 	const x2 = x + width;
 	const y2 = y + height;
 	return Object.freeze({
-		area: width * height,
+		area: area,
 		bottom: y2,
 		centerX: x + (width / 2),
 		centerY: y + (height / 2),
