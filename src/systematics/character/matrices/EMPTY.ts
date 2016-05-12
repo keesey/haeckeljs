@@ -1,4 +1,3 @@
-import {Character} from '../Character';
 import {EMPTY as EMPTY_LIST} from '../../../lists/EMPTY';
 import {EMPTY as EMPTY_SET} from '../../../sets/EMPTY';
 import {Matrix} from './Matrix';
