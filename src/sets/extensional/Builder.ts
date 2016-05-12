@@ -1,9 +1,9 @@
-import {Builder as BaseBuilder} from '.././../Builder';
+import {Builder as IBuilder} from '.././../Builder';
 import {EMPTY} from '../EMPTY';
 import {Set} from './Set';
 import {hash} from '../../hash';
 
-export class Builder<T> implements BaseBuilder<Set<T>>
+export class Builder<T> implements IBuilder<Set<T>>
 {
 	private hashMap: { [hash: string]: T; } = {};
 	public add(...elements: T[])
