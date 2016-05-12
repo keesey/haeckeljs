@@ -1,9 +1,5 @@
-export function every<T>(list: T[], condition: (element: T) => boolean)
+export function every<T>(list: T[], condition: (element: T) => boolean): boolean
 {
-	if (!list)
-	{
-		return true;
-	}
 	const n = list.length;
 	for (let i = 0; i < n; ++i)
 	{
