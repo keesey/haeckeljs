@@ -1,9 +1,5 @@
-export function some<T>(list: T[], condition: (element: T) => boolean)
+export function some<T>(list: T[], condition: (element: T) => boolean): boolean
 {
-	if (!list)
-	{
-		return false;
-	}
 	const n = list.length;
 	for (let i = 0; i < n; ++i)
 	{
