@@ -57,7 +57,7 @@ export function create(min: number, max: number = NaN): Range
 	{
 		return ONE;
 	}
-	return Object.freeze({
+	return Object.freeze<Range>({
 		empty: false,
 		hash: '[' + min + '…' + max + ']',
 		max: max,
