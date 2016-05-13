@@ -3,19 +3,19 @@ import {EMPTY} from '../sets/EMPTY';
 
 export function create(x: number, y: number, width: number, height: number): Rectangle
 {
-	if (isNaN(x))
+	if (isNaN(x) || typeof x !== 'number')
 	{
 	    throw new Error('Invalid x: ' + String(x) + '.');
 	}
-	if (isNaN(y))
+	if (isNaN(y) || typeof y !== 'number')
 	{
 	    throw new Error('Invalid y: ' + String(x) + '.');
 	}
-	if (isNaN(width) || width < 0)
+	if (isNaN(width) || typeof width !== 'number' || width < 0)
 	{
 	    throw new Error('Invalid width: ' + String(width) + '.');
 	}
-	if (isNaN(height) || height < 0)
+	if (isNaN(height) || typeof height !== 'number' || height < 0)
 	{
 	    throw new Error('Invalid height: ' + String(height) + '.');
 	}
