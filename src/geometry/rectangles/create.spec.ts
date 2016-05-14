@@ -1,5 +1,5 @@
 import {describe, expect, it} from 'jasmine';
-import {create} from './create';
+import './create';
 
 describe('`geometry/rectangles/create`', () =>
 {
@@ -67,8 +67,8 @@ describe('`geometry/rectangles/create`', () =>
 			top: 3,
 			width: 4,
 			x: 2,
-			y: 3,
 			x2: 6,
+			y: 3,
 			y2: 8,
 		};
 		it('should have the expected values', () =>

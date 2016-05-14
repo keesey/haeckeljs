@@ -1,23 +1,23 @@
-import {Rectangle} from './Rectangle';
-import {EMPTY} from '../sets/EMPTY';
+import './Rectangle';
+import '../sets/EMPTY';
 
-export function create(x: number, y: number, width: number, height: number): Rectangle
+export default function create(x: number, y: number, width: number, height: number): Rectangle
 {
 	if (isNaN(x) || typeof x !== 'number')
 	{
-	    throw new Error('Invalid x: ' + String(x) + '.');
+		throw new Error('Invalid x: ' + String(x) + '.');
 	}
 	if (isNaN(y) || typeof y !== 'number')
 	{
-	    throw new Error('Invalid y: ' + String(x) + '.');
+		throw new Error('Invalid y: ' + String(x) + '.');
 	}
 	if (isNaN(width) || typeof width !== 'number' || width < 0)
 	{
-	    throw new Error('Invalid width: ' + String(width) + '.');
+		throw new Error('Invalid width: ' + String(width) + '.');
 	}
 	if (isNaN(height) || typeof height !== 'number' || height < 0)
 	{
-	    throw new Error('Invalid height: ' + String(height) + '.');
+		throw new Error('Invalid height: ' + String(height) + '.');
 	}
 	const area = width * height;
 	if (area === 0)
@@ -39,8 +39,8 @@ export function create(x: number, y: number, width: number, height: number): Rec
 		top: y,
 		width: width,
 		x: x,
-		y: y,
 		x2: x2,
+		y: y,
 		y2: y2,
 	});
 }

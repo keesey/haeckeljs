@@ -1,13 +1,13 @@
-import {EMPTY} from '../../sets/EMPTY';
-import {Rectangle} from './Rectangle';
-import {createFromCoordinates} from './createFromCoordinates';
+import './Rectangle';
+import './createFromCoordinates';
+import '../../sets/EMPTY';
 
-export function combine(rectangles: Rectangle[]): Rectangle
+export default function combine(rectangles: Rectangle[]): Rectangle
 {
-	const n = rectangles.length; 
+	const n = rectangles.length;
 	if (n === 0)
 	{
-		return EMPTY_SET;
+		return EMPTY;
 	}
 	if (n === 1)
 	{

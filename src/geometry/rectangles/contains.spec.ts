@@ -1,11 +1,11 @@
 import {describe, expect, it} from 'jasmine';
-import {Rectangle} from './Rectangle';
-import {contains} from './contains';
+import './Rectangle';
+import './contains';
 import {create as createRectangle} from './create';
-import {ORIGIN} from '../points/ORIGIN';
-import {Point} from '../points/Point';
+import '../points/ORIGIN';
+import '../points/Point';
 import {create as createPoint} from '../points/create';
-import {EMPTY} from '../../sets/EMPTY';
+import '../../sets/EMPTY';
 
 describe('`geometry/rectangles/contains`', () =>
 {

@@ -1,8 +1,8 @@
 import {describe, expect, it} from 'jasmine';
-import {Rectangle} from './Rectangle';
-import {combine} from './combine';
-import {create} from './create';
-import {EMPTY} from '../sets/EMPTY';
+import './Rectangle';
+import './combine';
+import './create';
+import '../sets/EMPTY';
 
 describe('geometry/rectangles/combine', () =>
 {

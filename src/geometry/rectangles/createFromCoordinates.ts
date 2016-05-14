@@ -1,7 +1,7 @@
-import {Rectangle} from './Rectangle';
-import {create} from './create';
+import './Rectangle';
+import './create';
 
-export function createFromCoordinates(x: number, y: number, x2: number, y2: number): Rectangle
+export default function createFromCoordinates(x: number, y: number, x2: number, y2: number): Rectangle
 {
 	if (x <= x2)
 	{
