@@ -1,4 +1,4 @@
-export default seedRandom = (function()
+export default (function()
 {
 	// From http://baagoe.com/en/RandomMusings/javascript/
 	// Johannes BaagÌüe <baagoe@baagoe.com>, 2010

@@ -1,8 +1,8 @@
-import './Rectangle';
-import './createFromCoordinates';
-import '../points/Point';
+import {Rectangle} from './Rectangle';
+import createFromCoordinates from './createFromCoordinates';
+import {Point} from '../points/Point';
 
-export default function createFromPoints(a: Point, b: Point): Rectangle
+export default function(a: Point, b: Point): Rectangle
 {
-	return createFromCoordinates(a.x, a.y, b.x, b.y);
+	return createFromCoordinates(a[0], a[1], b[0], b[1]);
 }

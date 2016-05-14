@@ -1,10 +1,10 @@
-import './Builder';
-import './Set';
-import './create';
-import './forEach';
-import './list';
-import './union';
-import '../EMPTY';
+import Builder from './Builder';
+import {Set} from './Set';
+import create from './create';
+import forEach from './forEach';
+import list from './list';
+import union from './union';
+import EMPTY from '../EMPTY';
 
 export default function power<T>(set: Set<T>): Set<Set<T>>
 {

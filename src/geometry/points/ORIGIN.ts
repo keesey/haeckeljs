@@ -1,3 +1,3 @@
-import './Point';
+import {Point} from './Point';
 
-export default ORIGIN: Point = Object.freeze<Point>([ 0, 0 ]);
+export default Object.freeze<Point>([ 0, 0 ]);

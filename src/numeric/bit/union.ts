@@ -1,5 +1,5 @@
-import './Set';
-import './createFromBits';
+import {Set} from './Set';
+import createFromBits from './createFromBits';
 
 export default function union(sets: Set[]): Set
 {

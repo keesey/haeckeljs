@@ -1,6 +1,6 @@
-import './GUID4_RANDOM';
+import GUID4_RANDOM from './GUID4_RANDOM';
 
-export default function guid4(): string
+export default function(): string
 {
 	return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c: string) =>
 	{

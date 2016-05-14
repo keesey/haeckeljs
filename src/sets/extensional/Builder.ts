@@ -1,7 +1,7 @@
-import {Builder as IBuilder} from '.././../Builder';
-import '../EMPTY';
-import './Set';
-import '../../hash';
+import {Set} from './Set';
+import EMPTY from '../EMPTY';
+import {Builder as IBuilder} from '../../Builder';
+import hash from '../../hash';
 
 export default class Builder<T> implements IBuilder<Set<T>>
 {

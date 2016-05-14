@@ -1,11 +1,11 @@
-import '../../Builder';
-import '../../geometry/points/Point';
-import '../../geometry/points/create';
-import '../../numeric/precisionEqual';
+import {Builder} from '../../Builder';
+import {Point} from '../../geometry/points/Point';
+import create from '../../geometry/points/create';
+import precisionEqual from '../../numeric/precisionEqual';
 
 export default class PathBuilder implements Builder<string>
 {
-	public close: boolean = true;
+	public close = true;
 	private points: Point[] = [];
 	public add(builder: PathBuilder): PathBuilder;
 	public add(point: Point): PathBuilder;
@@ -14,7 +14,7 @@ export default class PathBuilder implements Builder<string>
 	{
 		if (typeof a === 'number')
 		{
-			this.points.push(pt.create(<number> a, y));
+			this.points.push(create(<number> a, y));
 		}
 		else if (a instanceof PathBuilder)
 		{
@@ -36,32 +36,32 @@ export default class PathBuilder implements Builder<string>
 		let beforeLast: Point;
 		let last = this.points[0];
 		let lastCommand = 'M';
-		const result: string[] = [lastCommand + last.x + ' ' + last.y];
+		const result: string[] = [lastCommand + last.join(' ')];
 		for (let i = 1; i < n; ++i)
 		{
 			const point = this.points[i];
-			if (precisionEqual(last.x, point.x))
+			if (precisionEqual(last[0], point[0]))
 			{
-				if (!precisionEqual(last.y, point.y))
+				if (!precisionEqual(last[1], point[1]))
 				{
-					if (lastCommand === 'V' && beforeLast && beforeLast.y >= Math.min(last.y, point.y) && beforeLast.y <= Math.max(last.y, point.y))
+					if (lastCommand === 'V' && beforeLast && beforeLast[1] >= Math.min(last[1], point[1]) && beforeLast[1] <= Math.max(last[1], point[1]))
 					{
 						result.pop();
 					}
-					result.push((lastCommand = 'V') + point.y);
+					result.push((lastCommand = 'V') + point[1]);
 				}
 			}
-			else if (precisionEqual(last.y, point.y))
+			else if (precisionEqual(last[1], point[1]))
 			{
-				if (lastCommand === 'H' && beforeLast && beforeLast.x >= Math.min(last.x, point.x) && beforeLast.x <= Math.max(last.x, point.x))
+				if (lastCommand === 'H' && beforeLast && beforeLast[0] >= Math.min(last[0], point[0]) && beforeLast[0] <= Math.max(last[0], point[0]))
 				{
 					result.pop();
 				}
-				result.push((lastCommand = 'H') + point.x);
+				result.push((lastCommand = 'H') + point[0]);
 			}
 			else
 			{
-				result.push((lastCommand = 'L') + point.x + ' ' + point.y);
+				result.push((lastCommand = 'L') + point.join(' '));
 			}
 			beforeLast = last;
 			last = point;

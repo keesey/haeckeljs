@@ -1,11 +1,11 @@
-import '../../colors/BLACK';
-import '../../colors/WHITE';
-import '../../colors/hex';
-import '../../../dom/Builder.ts';
-import '../../../dom/svg/NAMESPACE.ts';
-import '../../../geometry/rectangles/Rectangle';
+import BLACK from '../../colors/BLACK';
+import WHITE from '../../colors/WHITE';
+import hex from '../../colors/hex';
+import Builder from '../../../dom/Builder.ts';
+import NAMESPACE from '../../../dom/svg/NAMESPACE.ts';
+import {Rectangle} from '../../../geometry/rectangles/Rectangle';
 
-export default function drawUnknown(element: Builder, area: Rectangle, spacingH: number, spacingV: number, fontSize: number)
+export default function(element: Builder, area: Rectangle, spacingH: number, spacingV: number, fontSize: number)
 {
 	// :TODO: Customizable renderer
 	const group = element
@@ -39,7 +39,7 @@ export default function drawUnknown(element: Builder, area: Rectangle, spacingH:
 		.attrs({
 			stroke: hex(BLACK),
 			'stroke-width': '2px',
-			'stroke-dasharray': '2 2'
+			'stroke-dasharray': '2 2',
 			x1: (area.right - spacingH) + 'px',
 			x2: (area.right - spacingH) + 'px',
 			y1: (area.top - spacingV) + 'px',
@@ -48,7 +48,7 @@ export default function drawUnknown(element: Builder, area: Rectangle, spacingH:
 	group
 		.child('text')
 		.attrs({
-			fill: BLACK.hex,
+			fill: hex(BLACK),
 			'text-anchor': 'middle',
 			x: area.centerX + 'px',
 			y: (area.centerY + fontSize / 2) + 'px',

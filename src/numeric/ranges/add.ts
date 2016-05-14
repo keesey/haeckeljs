@@ -1,8 +1,8 @@
-import './Range';
-import './create';
-import '../sets/EMPTY';
+import {Range} from './Range';
+import create from './create';
+import EMPTY from '../../sets/EMPTY';
 
-export default function add(range: Range, value: number): Range
+export default function(range: Range, value: number): Range
 {
 	if (isNaN(value))
 	{

@@ -1,3 +1,3 @@
-import '../numeric/seedRandom';
+import seedRandom from '../numeric/seedRandom';
 
-export default GUID4_RANDOM = seedRandom('UUID', 4);
+export default seedRandom('UUID', 4);

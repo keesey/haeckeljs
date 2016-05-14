@@ -1,7 +1,7 @@
-import './Rectangle';
-import '../sets/EMPTY';
+import {Rectangle} from './Rectangle';
+import EMPTY from '../../sets/EMPTY';
 
-export default function create(x: number, y: number, width: number, height: number): Rectangle
+export default function(x: number, y: number, width: number, height: number): Rectangle
 {
 	if (isNaN(x) || typeof x !== 'number')
 	{

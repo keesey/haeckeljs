@@ -1,6 +1,6 @@
-import './Range';
+import {Range} from './Range';
 
-export default ONE = Object.freeze<Range>({
+export default Object.freeze<Range>({
 	empty: false,
 	hash: '[1…1]',
 	max: 1,

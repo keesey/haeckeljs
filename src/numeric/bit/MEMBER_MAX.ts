@@ -1,1 +1,1 @@
-export default MEMBER_MAX = 31;
+export default 31;

@@ -1,7 +1,8 @@
-import './Set';
-import './create';
+import {Data} from './Data';
+import {Set} from './Set';
+import create from './create';
 
-export default function read<T>(data: T | T[]): Set<T>
+export default function<T>(data: Data<T>): Set<T>
 {
 	if (data === null || data === undefined)
 	{

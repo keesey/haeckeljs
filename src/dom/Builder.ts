@@ -1,11 +1,11 @@
-import './Attributes';
-import './Style';
+import {Attributes} from './Attributes';
+import {Style} from './Style';
 import {Builder as IBuilder} from '../Builder';
 
 export default class Builder implements IBuilder<Element>
 {
-	private _parent: ElementBuilder;
-	private const children: ElementBuilder[] = [];
+	private _parent: Builder;
+	private children: Builder[] = [];
 	private element: Element;
 	private uri: string;
 	constructor(document: Document, element: Element);
@@ -25,24 +25,24 @@ export default class Builder implements IBuilder<Element>
 		}
 		this.uri = this.element.namespaceURI;
 	}
-	public attr(name: string, value: string): ElementBuilder;
-	public attr(uri: string, localName: string, value: string): ElementBuilder;
-	public attr(a: string, b: string, c: string = null): ElementBuilder
+	public attr(name: string, value: string): Builder;
+	public attr(uri: string, localName: string, value: string): Builder;
+	public attr(a: string, b: string, c: string = null): Builder
 	{
 		c === null
 			? (this.uri ? this.element.setAttributeNS(this.uri, a, b) : this.element.setAttribute(a, b))
 			: this.element.setAttributeNS(a, b, c);
 		return this;
 	}
-	public attrs(uri: string, attrs: Attributes): ElementBuilder;
-	public attrs(attrs: Attributes): ElementBuilder;
-	public attrs(a: string | Attributes, attrs: Attributes = null): ElementBuilder
+	public attrs(uri: string, attrs: Attributes): Builder;
+	public attrs(attrs: Attributes): Builder;
+	public attrs(a: string | Attributes, attrs: Attributes = null): Builder
 	{
 		const uriGiven = typeof a === 'string';
 		const uri = uriGiven ? <string> a : this.uri;
 		if (!uriGiven)
 		{
-			attrs = a;
+			attrs = <Attributes> a;
 		}
 		if (attrs)
 		{
@@ -61,9 +61,9 @@ export default class Builder implements IBuilder<Element>
 	{
 		return this.element;
 	}
-	public child(uri: string, localName: string): ElementBuilder;
-	public child(name: string): ElementBuilder;
-	public child(a: string, localName: string = null): ElementBuilder
+	public child(uri: string, localName: string): Builder;
+	public child(name: string): Builder;
+	public child(a: string, localName: string = null): Builder
 	{
 		const uri = localName === null ? this.uri : a;
 		if (localName === null)
@@ -71,14 +71,14 @@ export default class Builder implements IBuilder<Element>
 			localName = a;
 		}
 		const child = uri
-			? new ElementBuilder(this.document, uri, localName)
-			: new ElementBuilder(this.document, localName);
+			? new Builder(this.document, uri, localName)
+			: new Builder(this.document, localName);
 		child._parent = this;
 		this.element.appendChild(child.element);
 		this.children.push(child);
 		return child;
 	}
-	public detach(): ElementBuilder
+	public detach(): Builder
 	{
 		if (this.element.parentNode)
 		{
@@ -89,18 +89,18 @@ export default class Builder implements IBuilder<Element>
 		}
 		return this;
 	}
-	public parent(): ElementBuilder
+	public parent(): Builder
 	{
 		return this._parent;
 	}
-	public reset(): ElementBuilder
+	public reset(): Builder
 	{
 		// :TODO: Remove all attributes.
 		this.children.forEach(child => child.detach());
 		// :TODO: Remove text nodes.
 		return this;
 	}
-	public text(data: string): ElementBuilder
+	public text(data: string): Builder
 	{
 		this.element.appendChild(this.document.createTextNode(data));
 		return this;

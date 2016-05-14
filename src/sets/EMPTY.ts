@@ -1,9 +1,9 @@
-import './EmptySet';
-import '../geometry/points/Point';
+import {EmptySet} from './EmptySet';
+import {Point} from '../geometry/points/Point';
 
-export default EMPTY: EmptySet = (function ()
+export default (function ()
 {
-	const filter = (element: any) => false;
+	const filter = () => false;
 	const empty: EmptySet =
 		{
 			angle: NaN,

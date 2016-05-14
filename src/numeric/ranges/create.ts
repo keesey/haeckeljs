@@ -1,14 +1,14 @@
-import './NONNEGATIVES';
-import './NONPOSITIVES';
-import './ONE';
-import './REALS';
-import './Range';
-import './ZERO';
-import './ZERO_TO_ONE';
-import '../PRECISION';
-import '../sets/EMPTY';
+import NONNEGATIVES from './NONNEGATIVES';
+import NONPOSITIVES from './NONPOSITIVES';
+import ONE from './ONE';
+import REALS from './REALS';
+import {Range} from './Range';
+import ZERO from './ZERO';
+import ZERO_TO_ONE from './ZERO_TO_ONE';
+import PRECISION from '../PRECISION';
+import EMPTY from '../../sets/EMPTY';
 
-export default function create(min: number, max: number = NaN): Range
+export default function(min: number, max: number = NaN): Range
 {
 	if (isNaN(min))
 	{

@@ -1,1 +1,1 @@
-export default WHITE = 0xFFFFFFFF;
+export default 0xFFFFFFFF;

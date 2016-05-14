@@ -1,13 +1,13 @@
-import './Arc';
+import {Arc} from './Arc';
 import {Graph} from './Graph';
 import {Builder as IBuilder} from '../../Builder';
-import {equal} from '../../equal';
-import {hash} from '../../hash';
-import {Builder as SetBuilder} from '../../sets/extensional/Builder';
+import equal from '../../equal';
+import hash from '../../hash';
+import SetBuilder from '../../sets/extensional/Builder';
 import {Set} from '../../sets/extensional/Set';
-import {contains} from '../../sets/extensional/contains';
-import {forEach} from '../../sets/extensional/forEach';
-import {intersection} from '../../sets/extensional/intersection';
+import contains from '../../sets/extensional/contains';
+import forEach from '../../sets/extensional/forEach';
+import intersection from '../../sets/extensional/intersection';
 
 export default class Builder<T> implements IBuilder<Graph<T>>
 {
@@ -64,7 +64,7 @@ export default class Builder<T> implements IBuilder<Graph<T>>
 				}
 			});
 		}
-		return Object.freeze<Graph<T>>([ vertices, arcs.build() ]);
+		return Object.freeze(<Graph<T>> [ vertices, arcs.build() ]);
 	}
 	public buildVertices(): Set<T>
 	{

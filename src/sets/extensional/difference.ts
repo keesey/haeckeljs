@@ -1,9 +1,9 @@
-import './Builder';
-import './Set';
-import '../EMPTY';
-import '../../equal';
+import Builder from './Builder';
+import {Set} from './Set';
+import EMPTY from '../EMPTY';
+import equal from '../../equal';
 
-export default function difference<T>(minuend: Set<T>, subtrahend: Set<T>): Set<T>
+export default function<T>(minuend: Set<T>, subtrahend: Set<T>): Set<T>
 {
 	if (minuend.empty || subtrahend.size === Infinity)
 	{

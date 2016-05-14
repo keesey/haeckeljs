@@ -1,4 +1,4 @@
-import '../../../../Model';
+import {Model} from '../../../Model';
 
 export interface Coordinates extends Model
 {

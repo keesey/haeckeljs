@@ -1,5 +1,5 @@
-import './Edge';
-import './Graph';
-import {EMPTY as EMPTY_SET} from '../sets/EMPTY';
+import {Edge} from './Edge';
+import {Graph} from './Graph';
+import EMPTY from '../sets/EMPTY';
 
-export default EMPTY = Object.freeze<Graph<any>>([ EMPTY_SET, EMPTY_SET ]);
+export default Object.freeze<Graph<any>>([ EMPTY, EMPTY ]);

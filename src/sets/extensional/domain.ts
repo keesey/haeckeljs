@@ -1,6 +1,6 @@
-import './Set';
+import {Set} from './Set';
 
-export default function domain<T>(hash: string): Set<T>
+export default function<T>(hash: string): Set<T>
 {
 	return Object.freeze({
 		empty: false,

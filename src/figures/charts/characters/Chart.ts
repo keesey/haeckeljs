@@ -1,27 +1,27 @@
-import './DEFAULT_STATE_STYLER';
-import './StateLabelColumnOffsetter';
-import './StateRenderer';
-import './StateSort';
-import './StateStyler';
-import './drawUnknown';
-import '../../Renderer';
-import '../../../dom/Builder';
-import '../../../dom/svg/NAMESPACE';
-import '../../../geometry/rectangles/Rectangle';
-import '../../../geometry/rectangles/combine';
-import '../../../geometry/rectangles/createFromCoordinates';
-import '../../../numeric/bit/Set';
-import {contains as bitContains} from '../../../numeric/bit/contains';
-import {create as createSet} from '../../../numeric/bit/create';
-import '../../../numeric/bit/size';
-import {EMPTY as EMPTY_SET} from '../../../sets/EMPTY';
-import {Builder as SetBuilder} from '../../../sets/extensional/Builder';
-import {contains as extensionalContains} from '../../../sets/extensional/contains';
-import '../../../systematics/characters/Character';
-import {EMPTY as EMPTY_MATRIX} from '../../../systematics/characters/matrices/EMPTY';
-import '../../../systematics/characters/matrices/Matrix';
-import '../../../systematics/characters/matrices/states';
-import '../../../systematics/taxic/Taxic';
+import DEFAULT_STATE_STYLER from './DEFAULT_STATE_STYLER';
+import {StateLabelColumnOffsetter} from './StateLabelColumnOffsetter';
+import StateRenderer from './StateRenderer';
+import {StateSort} from './StateSort';
+import {StateStyler} from './StateStyler';
+import drawUnknown from './drawUnknown';
+import {Renderer} from '../../Renderer';
+import Builder from '../../../dom/Builder';
+import NAMESPACE from '../../../dom/svg/NAMESPACE';
+import {Rectangle} from '../../../geometry/rectangles/Rectangle';
+import combine from '../../../geometry/rectangles/combine';
+import createFromCoordinates from '../../../geometry/rectangles/createFromCoordinates';
+import {Set} from '../../../numeric/bit/Set';
+import bitContains from '../../../numeric/bit/contains';
+import createSet from '../../../numeric/bit/create';
+import size from '../../../numeric/bit/size';
+import EMPTY_SET from '../../../sets/EMPTY';
+import SetBuilder from '../../../sets/extensional/Builder';
+import extensionalContains from '../../../sets/extensional/contains';
+import {Character} from '../../../systematics/characters/Character';
+import EMPTY_MATRIX from '../../../systematics/characters/matrices/EMPTY';
+import {Matrix} from '../../../systematics/characters/matrices/Matrix';
+import states from '../../../systematics/characters/matrices/states';
+import {Taxic} from '../../../systematics/taxic/Taxic';
 
 export default class CharacterMatrixChart implements Renderer
 {
@@ -48,12 +48,12 @@ export default class CharacterMatrixChart implements Renderer
 			}
 			return this._getArea(<number> a, <number> b);
 		}
-		const row = this.characters.indexOf(a);
+		const row = this.characters.indexOf(<Character<Set>> a);
 		if (row < 0)
 		{
 			return EMPTY_SET;
 		}
-		const column = this.taxa.indexOf(b);
+		const column = this.taxa.indexOf(<Taxic> b);
 		if (column < 0)
 		{
 			return EMPTY_SET;
@@ -98,9 +98,9 @@ export default class CharacterMatrixChart implements Renderer
 		{
 			return;
 		}
-		const group = element
+		const group = builder
 			.child('g');
-		const statesGroup = g
+		const statesGroup = group
 			.child('g');
 		let cells: number[][] = new Array(columns);
 		const unknownsBuilder = new SetBuilder<number>();
@@ -167,9 +167,9 @@ export default class CharacterMatrixChart implements Renderer
 			const stateLookup: { [state: string]: boolean; } = {};
 			for (let i = 0; i < cell.length; ++i)
 			{
-				state = cell[i];
+				const state = cell[i];
 				stateLookup[String(state)] = true;
-				const stateRenderer = stateRendererLookup[String(state)];
+				let stateRenderer = stateRendererLookup[String(state)];
 				if (!stateRenderer)
 				{
 					stateRendererLookup[String(state)] = stateRenderer

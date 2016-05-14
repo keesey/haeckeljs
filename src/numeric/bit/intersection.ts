@@ -1,7 +1,7 @@
-import './Set';
-import './createFromBits';
+import {Set} from './Set';
+import createFromBits from './createFromBits';
 
-export default function intersection(a: Set, b: Set): Set
+export default function(a: Set, b: Set): Set
 {
 	return createFromBits(a.bits & b.bits);
 }

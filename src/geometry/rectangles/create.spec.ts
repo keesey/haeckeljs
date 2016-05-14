@@ -1,5 +1,5 @@
 import {describe, expect, it} from 'jasmine';
-import './create';
+import create from './create';
 
 describe('`geometry/rectangles/create`', () =>
 {

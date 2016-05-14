@@ -1,11 +1,11 @@
-import './Builder';
-import './Set';
-import './contains';
-import './forEach';
-import '../EMPTY';
-import '../../equal';
+import Builder from './Builder';
+import {Set} from './Set';
+import contains from './contains';
+import forEach from './forEach';
+import EMPTY from '../EMPTY';
+import equal from '../../equal';
 
-export default function intersection<T>(a: Set<T>, b: Set<T>): Set<T>
+export default function<T>(a: Set<T>, b: Set<T>): Set<T>
 {
 	if (a.empty || b.empty)
 	{

@@ -1,8 +1,8 @@
-import './Rectangle';
-import './createFromCoordinates';
-import '../../sets/EMPTY';
+import {Rectangle} from './Rectangle';
+import createFromCoordinates from './createFromCoordinates';
+import EMPTY from '../../sets/EMPTY';
 
-export default function combine(rectangles: Rectangle[]): Rectangle
+export default function(rectangles: Rectangle[]): Rectangle
 {
 	const n = rectangles.length;
 	if (n === 0)

@@ -1,4 +1,4 @@
-import './RenderOptions';
+import {RenderOptions} from './RenderOptions';
 
 export interface Figure
 {

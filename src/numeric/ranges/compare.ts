@@ -1,6 +1,6 @@
-import './Range';
+import {Range} from './Range';
 
-export default function compare(a: Range, b: Range): number
+export default function(a: Range, b: Range): number
 {
 	if (a.empty)
 	{

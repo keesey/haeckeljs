@@ -1,7 +1,7 @@
-import './MEMBER_MAX';
-import './Set';
+import MEMBER_MAX from './MEMBER_MAX';
+import {Set} from './Set';
 
-export default function list(s: number | Set): number[]
+export default function(s: number | Set): number[]
 {
 	const bits: number = typeof s === 'number' ? (<number> s) : (<Set> s).bits;
 	const result: number[] = [];

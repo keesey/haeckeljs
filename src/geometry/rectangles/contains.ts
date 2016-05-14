@@ -1,7 +1,7 @@
-import '../points/Point';
-import './Rectangle';
+import {Rectangle} from './Rectangle';
+import {Point} from '../points/Point';
 
-export default function contains(rectangle: Rectangle, point: Point): boolean
+export default function(rectangle: Rectangle, point: Point): boolean
 {
-	return rectangle.x <= point.x && rectangle.y <= point.y && rectangle.x2 >= point.x && rectangle.y2 >= point.y;
+	return rectangle.x <= point[0] && rectangle.y <= point[1] && rectangle.x2 >= point[0] && rectangle.y2 >= point[1];
 }

@@ -1,5 +1,5 @@
 import '../numeric/ranges/Range';
-import '../sets/extensional/ExtensionalSet';
+import '../sets/extensional/Set';
 
 export interface Matrix<T>
 {
@@ -10,5 +10,5 @@ export interface Matrix<T>
 			[hash: string]: Range;
 		};
 	};
-	members: ExtensionalSet<T>;
+	members: Set<T>;
 }

@@ -1,7 +1,7 @@
-import './Builder';
-import './Set';
+import Builder from './Builder';
+import {Set} from './Set';
 
-export default function union<T>(sets: Set<T>[]): Set<T>
+export default function<T>(sets: Set<T>[]): Set<T>
 {
 	const n = sets.length;
 	if (n === 0)

@@ -1,4 +1,13 @@
 export interface BoundingClientRectElement extends Element
 {
-	getBoundingClientRect(): DOMRect;
+	getBoundingClientRect(): {
+		bottom: number;
+		left: number;
+		height: number;
+		right: number;
+		top: number;
+		width: number;
+		x: number;
+		y: number;
+	};
 }

@@ -1,1 +1,1 @@
-export default BLACK = 0xFF000000;
+export default 0xFF000000;

@@ -1,6 +1,6 @@
-import './Set';
+import {Set} from './Set';
 
-export default function properIncludes<T>(a: Set<T>, b: Set<T>): boolean
+export default function<T>(a: Set<T>, b: Set<T>): boolean
 {
 	if (a.hash === b.hash)
 	{

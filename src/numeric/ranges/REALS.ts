@@ -1,6 +1,6 @@
-import './Range';
+import {Range} from './Range';
 
-export default REALS = Object.freeze<Range>({
+export default Object.freeze<Range>({
 	empty: false,
 	hash: '[-Infinity…Infinity]',
 	max: Infinity,

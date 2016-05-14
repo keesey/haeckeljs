@@ -1,13 +1,13 @@
-import './Set';
-import './intersection';
-import './size';
-import '../ranges/ONE';
-import '../ranges/Range';
-import '../ranges/ZERO';
-import '../ranges/ZERO_TO_ONE';
-import '../../sets/EMPTY';
+import {Set} from './Set';
+import intersection from './intersection';
+import size from './size';
+import ONE from '../ranges/ONE';
+import {Range} from '../ranges/Range';
+import ZERO from '../ranges/ZERO';
+import ZERO_TO_ONE from '../ranges/ZERO_TO_ONE';
+import EMPTY from '../../sets/EMPTY';
 
-export default function distance(a: Set, b: Set): Range
+export default function(a: Set, b: Set): Range
 {
 	if (a === null || b === null)
 	{

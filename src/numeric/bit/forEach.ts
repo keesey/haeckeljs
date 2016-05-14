@@ -1,7 +1,7 @@
-import './Set';
-import './MEMBER_MAX';
+import {Set} from './Set';
+import MEMBER_MAX from './MEMBER_MAX';
 
-export default function forEach(s: Set, f: (value: number) => any): void
+export default function(s: Set, f: (value: number) => any): void
 {
 	for (let i = 0; i <= MEMBER_MAX; ++i)
 	{

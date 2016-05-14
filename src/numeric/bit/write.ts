@@ -1,5 +1,5 @@
-import './Set';
-import './list';
+import {Set} from './Set';
+import list from './list';
 
 export default function write(set: Set): number | number[]
 {

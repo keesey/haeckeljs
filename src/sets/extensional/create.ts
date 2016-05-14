@@ -1,8 +1,8 @@
-import './Builder';
-import '../EMPTY';
-import './Set';
+import Builder from './Builder';
+import {Set} from './Set';
+import EMPTY from '../EMPTY';
 
-export default function create<T>(elements: T[]): Set<T>
+export default function<T>(elements: T[]): Set<T>
 {
 	if (elements.length === 0)
 	{

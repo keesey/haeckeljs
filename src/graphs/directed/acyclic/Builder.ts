@@ -1,15 +1,15 @@
-import '../Arc';
-import {Builder as GraphBuilder} from '../Builder';
-import '../EMPTY';
+import {Arc} from '../Arc';
+import GraphBuilder from '../Builder';
+import EMPTY from '../EMPTY';
 import {Graph} from '../Graph';
 import {Builder as IBuilder} from '../../../Builder';
-import '../../../equal';
-import '../../../hash';
-import {Builder as SetBuilder} from '../../../sets/extensional/Builder';
-import '../../../sets/extensional/Set';
-import '../../../sets/extensional/contains';
-import '../../../sets/extensional/forEach';
-import '../../../sets/extensional/list';
+import equal from '../../../equal';
+import hash from '../../../hash';
+import SetBuilder from '../../../sets/extensional/Builder';
+import {Set} from '../../../sets/extensional/Set';
+import contains from '../../../sets/extensional/contains';
+import forEach from '../../../sets/extensional/forEach';
+import list from '../../../sets/extensional/list';
 
 export default class Builder<T> implements IBuilder<Graph<T>>
 {

@@ -1,1 +1,1 @@
-export default EMPTY = Object.freeze<any[]>([]);
+export default Object.freeze<any[]>([]);

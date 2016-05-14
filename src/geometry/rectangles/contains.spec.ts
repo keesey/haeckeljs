@@ -1,11 +1,11 @@
 import {describe, expect, it} from 'jasmine';
-import './Rectangle';
-import './contains';
-import {create as createRectangle} from './create';
-import '../points/ORIGIN';
-import '../points/Point';
-import {create as createPoint} from '../points/create';
-import '../../sets/EMPTY';
+import {Rectangle} from './Rectangle';
+import contains from './contains';
+import createRectangle from './create';
+import ORIGIN from '../points/ORIGIN';
+import {Point} from '../points/Point';
+import createPoint from '../points/create';
+import EMPTY from '../../sets/EMPTY';
 
 describe('`geometry/rectangles/contains`', () =>
 {
@@ -29,22 +29,22 @@ describe('`geometry/rectangles/contains`', () =>
 	});
 	it('should return `false` for a nonmember', () =>
 	{
-		expect(contains(RECTANGLE, createPoint(-5, -5)).toBe(false);
+		expect(contains(RECTANGLE, createPoint(-5, -5))).toBe(false);
 	});
 	it('should return `false` for a nonmember', () =>
 	{
-		expect(contains(RECTANGLE, createPoint(-5, -5)).toBe(false);
+		expect(contains(RECTANGLE, createPoint(-5, -5))).toBe(false);
 	});
 	it('should return `false` for a nonmember within the right horizontal bounds', () =>
 	{
-		expect(contains(RECTANGLE, createPoint(5, -5)).toBe(false);
+		expect(contains(RECTANGLE, createPoint(5, -5))).toBe(false);
 	});
 	it('should return `false` for a nonmember within the right vertical bounds', () =>
 	{
-		expect(contains(RECTANGLE, createPoint(-5, 5)).toBe(false);
+		expect(contains(RECTANGLE, createPoint(-5, 5))).toBe(false);
 	});
 	it('should return `false` for the empty set and the origin', () =>
 	{
-		expect(contains(EMPTY, ORIGIN).toBe(false);
+		expect(contains(EMPTY, ORIGIN)).toBe(false);
 	});
 });

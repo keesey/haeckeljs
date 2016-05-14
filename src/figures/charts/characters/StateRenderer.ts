@@ -1,12 +1,12 @@
-import '../../colors/BLACK';
-import '../../../dom/Builder';
-import './Chart';
-import '../../../dom/svg/NAMESPACE';
-import '../../Renderer';
-import './STATE_LABEL_COLOR_CUTOFF';
-import '../../colors/WHITE';
-import '../../colors/hex';
+import Chart from './Chart';
+import {Renderer} from '../../Renderer';
+import BLACK from '../../colors/BLACK';
+import WHITE from '../../colors/WHITE';
+import hex from '../../colors/hex';
+import Builder from '../../../dom/Builder';
+import NAMESPACE from '../../../dom/svg/NAMESPACE';
 
+const STATE_LABEL_COLOR_CUTOFF = 2 / 3;
 export default class StateRenderer implements Renderer
 {
 	private columnY: {
@@ -69,7 +69,7 @@ export default class StateRenderer implements Renderer
 		{
 			throw new Error('No area for row ' + this.row + ', column ' + this.minColumn + '.');
 		}
-		const group = element
+		const group = builder
 			.child(NAMESPACE, 'g')
 			.attrs({
 				'font-size': this.fontSize + 'px',

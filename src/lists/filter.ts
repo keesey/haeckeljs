@@ -1,4 +1,4 @@
-export default function filter<T>(list: T[], condition: (element: T) => boolean): T[]
+export default function<T>(list: T[], condition: (element: T) => boolean): T[]
 {
 	const result: T[] = [];
 	const n = list.length;
