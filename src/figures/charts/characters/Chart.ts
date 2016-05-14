@@ -1,45 +1,44 @@
-import {Builder} from '../../../dom/Builder';
-import {Character} from '../../../systematics/characters/Character';
-import {DEFAULT_STATE_STYLER} from './DEFAULT_STATE_STYLER';
-import {EMPTY as EMPTY_MATRIX} from '../../../systematics/characters/matrices/EMPTY';
-import {EMPTY as EMPTY_SET} from '../../../sets/EMPTY';
-import {Matrix} from '../../../systematics/characters/matrices/Matrix';
-import {NAMESPACE} from '../../../dom/svg/NAMESPACE';
-import {Rectangle} from '../../../geometry/rectangles/Rectangle';
-import {Renderer} from '../../Renderer';
-import {Set} from '../../../numeric/sets/bit/Set';
-import {Builder as SetBuilder} from '../../../numeric/sets/extensional/Builder';
-import {StateLabelColumnOffsetter} from './StateLabelColumnOffsetter';
-import {StateRenderer} from './StateRenderer';
-import {StateSort} from './StateSort';
-import {StateStyler} from './StateStyler';
-import {Taxic} from '../../../systematics/taxic/Taxic';
-import {combine} from '../../../geometry/rectangles/combine';
+import './DEFAULT_STATE_STYLER';
+import './StateLabelColumnOffsetter';
+import './StateRenderer';
+import './StateSort';
+import './StateStyler';
+import './drawUnknown';
+import '../../Renderer';
+import '../../../dom/Builder';
+import '../../../dom/svg/NAMESPACE';
+import '../../../geometry/rectangles/Rectangle';
+import '../../../geometry/rectangles/combine';
+import '../../../geometry/rectangles/createFromCoordinates';
+import '../../../numeric/bit/Set';
 import {contains as bitContains} from '../../../numeric/bit/contains';
-import {create as createSet} from '../../../numeric/sets/bit/create';
-import {createFromCoordinates} from '../../../geometry/rectangles/createFromCoordinates';
+import {create as createSet} from '../../../numeric/bit/create';
+import '../../../numeric/bit/size';
+import {EMPTY as EMPTY_SET} from '../../../sets/EMPTY';
+import {Builder as SetBuilder} from '../../../sets/extensional/Builder';
 import {contains as extensionalContains} from '../../../sets/extensional/contains';
-import {drawUnknown} from './drawUnknown';
-import {size} from '../../../numeric/bit/size';
-import {states} from '../../../systematics/characters/matrices/states';
+import '../../../systematics/characters/Character';
+import {EMPTY as EMPTY_MATRIX} from '../../../systematics/characters/matrices/EMPTY';
+import '../../../systematics/characters/matrices/Matrix';
+import '../../../systematics/characters/matrices/states';
+import '../../../systematics/taxic/Taxic';
 
-export class CharacterMatrixChart implements Renderer
+export default class CharacterMatrixChart implements Renderer
 {
-	area: Rectangle = EMPTY_SET;
-	characters: Character<Set>[] = [];
-	matrix = <Matrix<Set>> EMPTY_MATRIX;
-	spacingH = 4;
-	spacingV = 16;
-	stateFontSize = 11;
-	stateLabelColumnOffsetter: StateLabelColumnOffsetter = () => 0;
-	stateSort: StateSort;
-	stateSpacing = 4;
-	stateStyler: StateStyler = DEFAULT_STATE_STYLER;
-	taxa: Taxic[] = [];
-	unknownFontSize = 22;
-	getArea(character: Character<Set>, taxon: Taxic): Rectangle;
-	getArea(row: number, column: number): Rectangle;
-	getArea(a: Character<Set> | number, b: Taxic | number): Rectangle
+	public area: Rectangle = EMPTY_SET;
+	public characters: Character<Set>[] = [];
+	public matrix = <Matrix<Set>> EMPTY_MATRIX;
+	public spacingH = 4;
+	public spacingV = 16;
+	public stateFontSize = 11;
+	public stateSort: StateSort;
+	public stateSpacing = 4;
+	public stateStyler: StateStyler = DEFAULT_STATE_STYLER;
+	public taxa: Taxic[] = [];
+	public unknownFontSize = 22;
+	public getArea(character: Character<Set>, taxon: Taxic): Rectangle;
+	public getArea(row: number, column: number): Rectangle;
+	public getArea(a: Character<Set> | number, b: Taxic | number): Rectangle
 	{
 		if (typeof a === 'number' && typeof b === 'number')
 		{
@@ -61,7 +60,7 @@ export class CharacterMatrixChart implements Renderer
 		}
 		return this._getArea(row, column);
 	}
-	render(parent: Builder): Builder
+	public render(parent: Builder): Builder
 	{
 		const group = parent
 			.child(NAMESPACE, 'g');
@@ -72,6 +71,7 @@ export class CharacterMatrixChart implements Renderer
 		}
 		return group;
 	}
+	public stateLabelColumnOffsetter: StateLabelColumnOffsetter = () => 0;
 	private _getArea(row: number, column: number): Rectangle
 	{
 		const rows = this.characters.length;
@@ -102,7 +102,7 @@ export class CharacterMatrixChart implements Renderer
 			.child('g');
 		const statesGroup = g
 			.child('g');
-		const cells: number[][] = new Array(columns);
+		let cells: number[][] = new Array(columns);
 		const unknownsBuilder = new SetBuilder<number>();
 		for (let column = 0; column < columns; ++column)
 		{
@@ -126,7 +126,7 @@ export class CharacterMatrixChart implements Renderer
 				cells[column] = cell;
 			}
 		}
-		cells = cells.map((cell, index, cells) =>
+		cells = cells.map((cell, index) =>
 		{
 			function next()
 			{
@@ -154,7 +154,7 @@ export class CharacterMatrixChart implements Renderer
 			{
 				return next()
 					.concat(prev())
-					.filter((value, index, array) => array.indexOf(value) === index)
+					.filter((value, nextAndPrevIndex, array) => array.indexOf(value) === nextAndPrevIndex)
 					.sort();
 			}
 			return cell;
@@ -163,14 +163,13 @@ export class CharacterMatrixChart implements Renderer
 		const stateRenderers: StateRenderer[] = [];
 		for (let column = 0; column < columns; ++column)
 		{
-			const taxon = this.taxa[column];
 			const cell = cells[column].sort(this.stateSort(row));
 			const stateLookup: { [state: string]: boolean; } = {};
 			for (let i = 0; i < cell.length; ++i)
 			{
 				state = cell[i];
 				stateLookup[String(state)] = true;
-				var stateRenderer = stateRendererLookup[String(state)];
+				const stateRenderer = stateRendererLookup[String(state)];
 				if (!stateRenderer)
 				{
 					stateRendererLookup[String(state)] = stateRenderer

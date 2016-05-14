@@ -1,4 +1,4 @@
-import {Range} from '../../sets/ranges/Range';
+import '../../numeric/ranges/Range';
 
 export interface Axis
 {

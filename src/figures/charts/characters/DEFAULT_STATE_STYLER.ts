@@ -1,9 +1,9 @@
-import {BLACK} from '../../colors/BLACK';
-import {StateStyler} from './StateStyler';
-import {Style} from '../../../dom/Style';
-import {createRGB} from '../../colors/createRGB';
+import './StateStyler';
+import '../../colors/BLACK';
+import '../../colors/createRGB';
+import '../../../dom/Style';
 
-export const DEFAULT_STATE_STYLER: StateStyler = (state: number, totalStates: number) =>
+export default DEFAULT_STATE_STYLER: StateStyler = (state: number, totalStates: number) =>
 {
 	let color = BLACK;
 	if (state > 0 && totalStates > 0)

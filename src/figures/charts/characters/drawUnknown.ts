@@ -1,11 +1,11 @@
-import {BLACK} from '../../colors/BLACK';
-import {Builder} from '../../../dom/Builder.ts';
-import {NAMESPACE} from '../../../dom/svg/NAMESPACE.ts';
-import {Rectangle} from '../../../geometry/rectangles/Rectangle';
-import {WHITE} from '../../colors/WHITE';
-import {hex} from '../../colors/hex';
+import '../../colors/BLACK';
+import '../../colors/WHITE';
+import '../../colors/hex';
+import '../../../dom/Builder.ts';
+import '../../../dom/svg/NAMESPACE.ts';
+import '../../../geometry/rectangles/Rectangle';
 
-function drawUnknown(element: Builder, area: Rectangle, spacingH: number, spacingV: number, fontSize: number)
+export default function drawUnknown(element: Builder, area: Rectangle, spacingH: number, spacingV: number, fontSize: number)
 {
 	// :TODO: Customizable renderer
 	const group = element

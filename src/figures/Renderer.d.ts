@@ -1,4 +1,4 @@
-import {Builder} from '../Builder';
+import '../Builder';
 
 export interface Renderer
 {

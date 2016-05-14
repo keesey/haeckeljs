@@ -1,1 +1,1 @@
-export const WHITE = 0xFFFFFFFF;
+export default WHITE = 0xFFFFFFFF;

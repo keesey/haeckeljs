@@ -1,1 +1,1 @@
-export const DEFAULT_STATE_LABEL_COLOR_CUTOFF = 2 / 3;
+export default DEFAULT_STATE_LABEL_COLOR_CUTOFF = 2 / 3;

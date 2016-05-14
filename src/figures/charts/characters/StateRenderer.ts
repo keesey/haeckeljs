@@ -1,13 +1,13 @@
-import {BLACK} from '../../colors/BLACK';
-import {Builder} from '../../../dom/Builder';
-import {Chart} from './Chart';
-import {NAMESPACE} from '../../../dom/svg/NAMESPACE';
-import {Renderer} from '../../Renderer';
-import {STATE_LABEL_COLOR_CUTOFF} from './STATE_LABEL_COLOR_CUTOFF';
-import {WHITE} from '../../colors/WHITE';
-import {hex} from '../../colors/hex';
+import '../../colors/BLACK';
+import '../../../dom/Builder';
+import './Chart';
+import '../../../dom/svg/NAMESPACE';
+import '../../Renderer';
+import './STATE_LABEL_COLOR_CUTOFF';
+import '../../colors/WHITE';
+import '../../colors/hex';
 
-export class StateRenderer implements Renderer
+export default class StateRenderer implements Renderer
 {
 	private columnY: {
 		[column: string]: {
@@ -35,7 +35,7 @@ export class StateRenderer implements Renderer
 		this.rowHeight = firstCell.height;
 		this.rowTop = firstCell.top;
 	}
-	setRatio(column: number, top: number, bottom: number, unknown: boolean)
+	public setRatio(column: number, top: number, bottom: number, unknown: boolean)
 	{
 		if (isNaN(this.maxColumn) || column > this.maxColumn)
 		{
@@ -53,11 +53,11 @@ export class StateRenderer implements Renderer
 			}
 		}
 		this.columnY[String(column)] = {
+			bottom: this.rowTop - this.stateSpacing + (1 - top) * (this.rowHeight + this.stateSpacing),
 			top: this.rowTop + (1 - bottom) * (this.rowHeight + this.stateSpacing),
-			bottom: this.rowTop - this.stateSpacing + (1 - top) * (this.rowHeight + this.stateSpacing)
 		};
 	}
-	render(builder: Builder): Builder
+	public render(builder: Builder): Builder
 	{
 		if (isNaN(this.maxColumn) || isNaN(this.minColumn))
 		{
@@ -106,7 +106,7 @@ export class StateRenderer implements Renderer
 					else
 					{
 						d +=
-							'h' + this.cornerRadius + 
+							'h' + this.cornerRadius +
 							'Q' + [lastArea.right + this.cornerRadius, lastTop, lastArea.right + this.cornerRadius, lastTop - this.cornerRadius].join(' ') +
 							'V' + (columnY.top + this.cornerRadius) +
 							'Q' + [lastArea.right + this.cornerRadius, columnY.top, lastArea.right + this.cornerRadius * 2, columnY.top].join(' ');

@@ -1,1 +1,1 @@
-export const BLACK = 0xFF000000;
+export default BLACK = 0xFF000000;
