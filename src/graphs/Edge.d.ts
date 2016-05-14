@@ -1,3 +1,3 @@
-import {Set} from '../sets/extensional/Set';
+import '../sets/extensional/Set';
 
 export type Edge<T> = Set<T>;

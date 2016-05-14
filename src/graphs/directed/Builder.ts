@@ -1,56 +1,56 @@
-import {Arc} from './Arc';
-import {Builder as CoreBuilder} from '../../Builder';
+import './Arc';
 import {Graph} from './Graph';
-import {Set} from '../../sets/extensional/Set';
-import {Builder as SetBuilder} from '../../sets/extensional/Builder';
+import {Builder as IBuilder} from '../../Builder';
 import {equal} from '../../equal';
+import {hash} from '../../hash';
+import {Builder as SetBuilder} from '../../sets/extensional/Builder';
+import {Set} from '../../sets/extensional/Set';
 import {contains} from '../../sets/extensional/contains';
 import {forEach} from '../../sets/extensional/forEach';
-import {hash} from '../../hash';
 import {intersection} from '../../sets/extensional/intersection';
 
-export class Builder<T> implements CoreBuilder<Graph<T>>
+export default class Builder<T> implements IBuilder<Graph<T>>
 {
 	private arcs = new SetBuilder<Arc<T>>();
 	private vertices = new SetBuilder<T>();
-	addArc(head: T, tail: T)
+	public addArc(head: T, tail: T)
 	{
 		this.vertices.add(head, tail);
 		this.arcs.add([ head, tail ]);
 		return this;
 	}
-	addArcs(arcs: Set<Arc<T>>)
+	public addArcs(arcs: Set<Arc<T>>)
 	{
 		forEach(arcs, arc => this.addArc(arc[0], arc[1]));
 		return this;
 	}
-	addGraph(graph: Graph<T>)
+	public addGraph(graph: Graph<T>)
 	{
 		return this
 			.addVertices(graph[0])
 			.addArcs(graph[1]);
 	}
-	addVertex(vertex: T)
+	public addVertex(vertex: T)
 	{
 		this.vertices.add(vertex);
 		return this;
 	}
-	addVertices(vertices: Set<T>)
+	public addVertices(vertices: Set<T>)
 	{
 		this.vertices.addSet(vertices);
 		return this;
 	}
-	build(): Graph<T>
+	public build(): Graph<T>
 	{
 		const vertices = this.vertices.build();
 		const arcs = this.arcs.build();
 		return Object.freeze<Graph<T>>([ vertices, arcs ]);
 	}
-	buildArcs(): Set<Arc<T>>
+	public buildArcs(): Set<Arc<T>>
 	{
 		return this.arcs.build();
 	}
-	buildSubgraph(vertices: Set<T>): Graph<T>
+	public buildSubgraph(vertices: Set<T>): Graph<T>
 	{
 		vertices = intersection(vertices, this.vertices.build());
 		const arcs = new SetBuilder<T[]>();
@@ -66,24 +66,24 @@ export class Builder<T> implements CoreBuilder<Graph<T>>
 		}
 		return Object.freeze<Graph<T>>([ vertices, arcs.build() ]);
 	}
-	buildVertices(): Set<T>
+	public buildVertices(): Set<T>
 	{
 		return this.vertices.build();
 	}
-	containsArc(arc: Arc<T>): boolean
+	public containsArc(arc: Arc<T>): boolean
 	{
 		return this.arcs.contains(arc);
 	}
-	containsVertex(vertex: T): boolean
+	public containsVertex(vertex: T): boolean
 	{
 		return this.vertices.contains(vertex);
 	}
-	removeArc(head: T, tail: T)
+	public removeArc(head: T, tail: T)
 	{
 		this.arcs.remove([ head, tail ]);
 		return this;
 	}
-	removeVertex(vertex: T)
+	public removeVertex(vertex: T)
 	{
 		if (this.vertices.contains(vertex))
 		{
@@ -100,7 +100,7 @@ export class Builder<T> implements CoreBuilder<Graph<T>>
 		}
 		return this;
 	}
-	replaceVertex(oldVertex: T, newVertex: T)
+	public replaceVertex(oldVertex: T, newVertex: T)
 	{
 		if (equal(oldVertex, newVertex) || !this.vertices.contains(oldVertex))
 		{
@@ -126,7 +126,7 @@ export class Builder<T> implements CoreBuilder<Graph<T>>
 		});
 		return this;
 	}
-	reset()
+	public reset()
 	{
 		this.arcs.reset();
 		this.vertices.reset();

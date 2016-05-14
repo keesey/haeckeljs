@@ -1,5 +1,5 @@
-import {Edge} from './Edge';
-import {Graph} from './Graph';
-import {create} from '../sets/extensional/create';
+import './Edge';
+import './Graph';
+import {EMPTY as EMPTY_SET} from '../sets/EMPTY';
 
-export const EMPTY: Graph<any> = Object.freeze<Graph<any>>([ create<any>([]), create<Edge<any>>([]) ]);
+export default EMPTY = Object.freeze<Graph<any>>([ EMPTY_SET, EMPTY_SET ]);

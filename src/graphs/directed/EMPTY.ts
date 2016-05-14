@@ -1,5 +1,5 @@
-import {Arc} from './Arc';
-import {Digraph} from './Digraph';
-import {create} from '../sets/extensional/create';
+import './Arc';
+import './Graph';
+import {EMPTY as EMPTY_SET} from '../sets/EMPTY';
 
-export const EMPTY: Digraph<any> = Object.freeze<Digraph<any>>([ create<any>([]), create<Arc<any>>([]) ]);
+export default EMPTY = Object.freeze<Graph<any>>([ EMPTY_SET, EMPTY_SET ]);

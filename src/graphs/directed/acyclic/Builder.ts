@@ -1,17 +1,17 @@
-import {Arc} from '../Arc';
-import {Builder as BaseBuilder} from '../../../Builder';
-import {EMPTY} from '../EMPTY';
-import {Graph} from '../Graph';
+import '../Arc';
 import {Builder as GraphBuilder} from '../Builder';
-import {Set} from '../../../sets/extensional/Set';
+import '../EMPTY';
+import {Graph} from '../Graph';
+import {Builder as IBuilder} from '../../../Builder';
+import '../../../equal';
+import '../../../hash';
 import {Builder as SetBuilder} from '../../../sets/extensional/Builder';
-import {contains} from '../../../sets/extensional/contains';
-import {equal} from '../../../equal';
-import {forEach} from '../../../sets/extensional/forEach';
-import {hash} from '../../../hash';
-import {list} from '../../../sets/extensional/list';
+import '../../../sets/extensional/Set';
+import '../../../sets/extensional/contains';
+import '../../../sets/extensional/forEach';
+import '../../../sets/extensional/list';
 
-export class Builder<T> implements BaseBuilder<Graph<T>>
+export default class Builder<T> implements IBuilder<Graph<T>>
 {
 	private builder = new GraphBuilder<T>();
 	private closure: Graph<T>;
@@ -41,28 +41,28 @@ export class Builder<T> implements BaseBuilder<Graph<T>>
 		this.builder.addArc(head, tail);
 		return this;
 	}
-	addArcs(arcs: Set<Arc<T>>)
+	public addArcs(arcs: Set<Arc<T>>)
 	{
 		forEach(arcs, arc => this.addArc(arc[0], arc[1]));
 		return this;
 	}
-	addGraph(graph: Graph<T>)
+	public addGraph(graph: Graph<T>)
 	{
 		return this
 			.addVertices(graph[0])
 			.addArcs(graph[1]);
 	}
-	addVertex(vertex: T)
+	public addVertex(vertex: T)
 	{
 		this.builder.addVertex(vertex);
 		return this;
 	}
-	addVertices(vertices: Set<T>)
+	public addVertices(vertices: Set<T>)
 	{
 		this.builder.addVertices(vertices);
 		return this;
 	}
-	adjacencyMatrix(vertices?: T[]): boolean[][]
+	public adjacencyMatrix(vertices?: T[]): boolean[][]
 	{
 		if (!vertices)
 		{
@@ -94,15 +94,15 @@ export class Builder<T> implements BaseBuilder<Graph<T>>
 		});
 		return matrix;
 	}
-	build(): Graph<T>
+	public build(): Graph<T>
 	{
 		return this.builder.build();
 	}
-	buildArcs(): Set<Arc<T>>
+	public buildArcs(): Set<Arc<T>>
 	{
 		return this.builder.buildArcs();
 	}
-	buildClosure(): Graph<T>
+	public buildClosure(): Graph<T>
 	{
 		if (!this.closure)
 		{
@@ -142,7 +142,7 @@ export class Builder<T> implements BaseBuilder<Graph<T>>
 		}
 		return this.closure;
 	}
-	buildReduction(): Graph<T>
+	public buildReduction(): Graph<T>
 	{
 		if (!this.reduction)
 		{
@@ -174,44 +174,44 @@ export class Builder<T> implements BaseBuilder<Graph<T>>
 		}
 		return this.reduction;
 	}
-	buildSubgraph(vertices: Set<T>): Graph<T>
+	public buildSubgraph(vertices: Set<T>): Graph<T>
 	{
 		return this.builder.buildSubgraph(vertices);
 	}
-	buildVertices(): Set<T>
+	public buildVertices(): Set<T>
 	{
 		return this.builder.buildVertices();
 	}
-	containsArc(arc: Arc<T>): boolean
+	public containsArc(arc: Arc<T>): boolean
 	{
 		return this.builder.containsArc(arc);
 	}
-	containsVertex(vertex: T): boolean
+	public containsVertex(vertex: T): boolean
 	{
 		return this.builder.containsVertex(vertex);
 	}
-	removeArc(head: T, tail: T)
+	public removeArc(head: T, tail: T)
 	{
 		this.closure = this.reduction = null;
 		this.builder.removeArc(head, tail);
 		return this;
 	}
-	removeVertex(vertex: T)
+	public removeVertex(vertex: T)
 	{
 		this.closure = this.reduction = null;
 		this.builder.removeVertex(vertex);
 		return this;
 	}
-	replaceVertex(oldVertex: T, newVertex: T)
+	public replaceVertex(oldVertex: T, newVertex: T)
 	{
-	    if (this.containsVertex(oldVertex))
-	    {
+		if (this.containsVertex(oldVertex))
+		{
 			this.closure = this.reduction = null;
 			this.builder.replaceVertex(oldVertex, newVertex);
 		}
 		return this;
 	}
-	reset()
+	public reset()
 	{
 		this.closure = this.reduction = null;
 		this.builder.reset();

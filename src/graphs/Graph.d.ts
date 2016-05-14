@@ -1,4 +1,4 @@
-import {Edge} from './Edge';
-import {Set} from '../sets/extensional/Set';
+import './Edge';
+import '../sets/extensional/Set';
 
 export type Graph<V> = [Set<V>, Set<Edge<V>>];
