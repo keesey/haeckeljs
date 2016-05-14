@@ -1,7 +1,7 @@
-import {Set} from './Set';
-import {createFromBits} from './createFromBits';
+import './Set';
+import './createFromBits';
 
-export function setDiff(minuend: Set, subtrahend: Set): Set
+export default function setDiff(minuend: Set, subtrahend: Set): Set
 {
 	return createFromBits((minuend.bits ^ subtrahend.bits) & minuend.bits);
 }

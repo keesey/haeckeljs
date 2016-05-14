@@ -1,6 +1,6 @@
-import {EMPTY} from '../sets/EMPTY';
-import {Range} from './Range';
-import {create} from './create';
+import './Range';
+import './create';
+import '../sets/EMPTY';
 
 export default function add(range: Range, value: number): Range
 {

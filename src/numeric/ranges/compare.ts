@@ -1,4 +1,4 @@
-import {Range} from './Range';
+import './Range';
 
 export default function compare(a: Range, b: Range): number
 {

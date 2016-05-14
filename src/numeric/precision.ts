@@ -1,1 +1,1 @@
-export const PRECISION = 1000000;
+export default PRECISION = 1000000;

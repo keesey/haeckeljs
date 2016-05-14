@@ -1,6 +1,6 @@
-import {Range} from './Range';
+import './Range';
 
-export const NONPOSITIVES: Range = Object.freeze({
+export default NONPOSITIVES = Object.freeze<Range>({
 	empty: false,
 	hash: '[-Infinity…0]',
 	max: 0,

@@ -1,8 +1,8 @@
-import {EMPTY} from '../../sets/EMPTY';
-import {Set} from './Set';
-import {list} from './list';
+import '../../sets/EMPTY';
+import './Set';
+import './list';
 
-export function createFromBits(bits: number): Set
+export default function createFromBits(bits: number): Set
 {
 	if (bits === 0)
 	{

@@ -1,8 +1,8 @@
-import {MEMBER_MAX} from './MEMBER_MAX';
-import {Set} from './Set';
-import {createFromBits} from './createFromBits';
+import './MEMBER_MAX';
+import './Set';
+import './createFromBits';
 
-export function create(members: number[]): Set
+export default function create(members: number[]): Set
 {
 	let bits = 0;
 	for (let i = 0, n = members.length; i < n; ++i)

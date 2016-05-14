@@ -1,4 +1,4 @@
-import {Set} from '../../sets/Set';
+import '../../sets/Set';
 
 export interface Range extends Set
 {

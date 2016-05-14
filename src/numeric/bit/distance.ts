@@ -1,13 +1,13 @@
-import {BitSet as Set} from './BitSet';
-import {EMPTY} from '../EMPTY';
-import {ONE} from '../../numeric/ranges/ONE';
-import {ZERO} from '../../numeric/ranges/ZERO';
-import {ZERO_TO_ONE} from '../../numeric/ranges/ZERO_TO_ONE';
-import {Range} from '../../numeric/ranges/Range';
-import {intersection} from './intersection';
-import {size} from './size';
+import './Set';
+import './intersection';
+import './size';
+import '../ranges/ONE';
+import '../ranges/Range';
+import '../ranges/ZERO';
+import '../ranges/ZERO_TO_ONE';
+import '../../sets/EMPTY';
 
-export function distance(a: Set, b: Set): Range
+export default function distance(a: Set, b: Set): Range
 {
 	if (a === null || b === null)
 	{

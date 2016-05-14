@@ -1,7 +1,7 @@
-import {Set} from './Set';
-import {createFromBits} from './createFromBits';
+import './Set';
+import './createFromBits';
 
-export function union(sets: Set[]): Set
+export default function union(sets: Set[]): Set
 {
 	const n = sets.length;
 	if (n === 0)

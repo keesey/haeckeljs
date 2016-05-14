@@ -1,7 +1,7 @@
-import {MEMBER_MAX} from './MEMBER_MAX';
-import {Set} from './Set';
+import './MEMBER_MAX';
+import './Set';
 
-export function size(s: Set): number
+export default function size(s: Set): number
 {
 	let size = 0;
 	for (let i = 0; i <= MEMBER_MAX; ++i)

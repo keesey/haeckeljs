@@ -1,14 +1,14 @@
-import {EMPTY} from '../sets/EMPTY';
-import {PRECISION} from '../numeric/PRECISION';
-import {Range} from './Range';
-import {NONNEGATIVES} from './NONNEGATIVES';
-import {NONPOSITIVES} from './NONPOSITIVES';
-import {ONE} from './ONE';
-import {REALS} from './REALS';
-import {ZERO} from './ZERO';
-import {ZERO_TO_ONE} from './ZERO_TO_ONE';
+import './NONNEGATIVES';
+import './NONPOSITIVES';
+import './ONE';
+import './REALS';
+import './Range';
+import './ZERO';
+import './ZERO_TO_ONE';
+import '../PRECISION';
+import '../sets/EMPTY';
 
-export function create(min: number, max: number = NaN): Range
+export default function create(min: number, max: number = NaN): Range
 {
 	if (isNaN(min))
 	{
@@ -63,6 +63,6 @@ export function create(min: number, max: number = NaN): Range
 		max: max,
 		mean: (max + min) / 2,
 		min: min,
-		size: max - min
+		size: max - min,
 	});
 }

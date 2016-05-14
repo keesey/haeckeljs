@@ -1,6 +1,6 @@
-import {Set} from './Set';
+import './Set';
 
-export function contains(s: Set, n: number): boolean
+export default function contains(s: Set, n: number): boolean
 {
 	return (s.bits & (1 << n)) !== 0;
 }

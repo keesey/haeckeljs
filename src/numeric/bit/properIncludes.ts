@@ -1,6 +1,6 @@
-import {Set} from './Set';
+import './Set';
 
-export function properIncludes(superset: Set, subset: Set): boolean
+export default function properIncludes(superset: Set, subset: Set): boolean
 {
 	return superset.bits !== subset.bits && (superset.bits & subset.bits) === subset.bits;
 }

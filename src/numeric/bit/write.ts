@@ -1,7 +1,7 @@
-import {Set} from './Set';
-import {list} from './list';
+import './Set';
+import './list';
 
-export function write(set: Set): number | number[]
+export default function write(set: Set): number | number[]
 {
 	if (set === null || set === undefined)
 	{

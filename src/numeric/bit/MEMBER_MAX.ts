@@ -1,1 +1,1 @@
-export const MEMBER_MAX = 31;
+export default MEMBER_MAX = 31;

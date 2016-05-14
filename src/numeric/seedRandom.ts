@@ -1,4 +1,4 @@
-export const seedRandom: (...args: any[]) => () => number = (function()
+export default seedRandom = (function()
 {
 	// From http://baagoe.com/en/RandomMusings/javascript/
 	// Johannes BaagÌüe <baagoe@baagoe.com>, 2010

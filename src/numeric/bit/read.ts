@@ -1,11 +1,9 @@
-import {MEMBER_MAX} from './MEMBER_MAX';
-import {Set} from './Set';
-import {create} from './create';
-import {list} from './list';
+import './MEMBER_MAX';
+import './Set';
+import './create';
+import './list';
 
-export function read(data: number): Set;
-export function read(data: number[]): Set;
-export function read(data: number | number[]): Set
+export default function read(data: number | number[]): Set
 {
 	if (data === null || data === undefined)
 	{

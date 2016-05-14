@@ -1,7 +1,7 @@
-import {Set} from './Set';
-import {MEMBER_MAX} from './MEMBER_MAX';
+import './MEMBER_MAX';
+import './Set';
 
-export function every(s: Set, f: (value: number) => boolean): boolean
+export default function every(s: Set, f: (value: number) => boolean): boolean
 {
 	for (let i = 0; i <= MEMBER_MAX; ++i)
 	{

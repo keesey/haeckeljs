@@ -1,7 +1,7 @@
-import {Range} from './Range';
-import {create} from './create';
+import './Range';
+import './create';
 
-export function combine(ranges: Range[]): Range
+export default function combine(ranges: Range[]): Range
 {
 	const n = ranges.length;
 	if (n === 1)
