@@ -1,6 +1,6 @@
-import {equal} from '../equal';
+import '../equal';
 
-export function properIncludes<T>(a: T[], b: T[]): boolean
+export default function properIncludes<T>(a: T[], b: T[]): boolean
 {
 	const an = a.length;
 	const bn = b.length;

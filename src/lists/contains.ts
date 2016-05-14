@@ -1,6 +1,6 @@
-import {equal} from '../equal';
+import '../equal';
 
-export function contains<T>(list: T[], element: T): boolean
+export default function contains<T>(list: T[], element: T): boolean
 {
 	const n = list.length;
 	for (let i = 0; i < n; ++i)

@@ -1,4 +1,4 @@
-export function some<T>(list: T[], condition: (element: T) => boolean): boolean
+export default function some<T>(list: T[], condition: (element: T) => boolean): boolean
 {
 	const n = list.length;
 	for (let i = 0; i < n; ++i)

@@ -1,4 +1,4 @@
-export function map<X, Y>(list: X[], map: (element: X) => Y): Y[]
+export default function map<X, Y>(list: X[], map: (element: X) => Y): Y[]
 {
 	const n = list.length;
 	const result: Y[] = new Array(n);
