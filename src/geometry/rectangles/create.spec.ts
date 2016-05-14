@@ -1,5 +1,4 @@
 import {describe, expect, it} from 'jasmine';
-import {Rectangle} from './Rectangle';
 import {create} from './create';
 
 describe('`geometry/rectangles/create`', () =>
