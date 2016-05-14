@@ -1,7 +1,7 @@
-import {BBoxElement} from './BBoxElement';
-import {create} from '../geometry/rectangles/create';
+import './BBoxElement';
+import '../../geometry/rectangles/create';
 
-export function rectangle(element: BBoxElement): Rectangle
+export default function rectangle(element: BBoxElement): Rectangle
 {
 	const rect = element.getBBox();
 	return create(rect.x, rect.y, rect.width, rect.height);

@@ -1,7 +1,7 @@
 import {Builder as DOMBuilder} from '../Builder';
-import {NAMESPACE} from './NAMESPACE';
+import './NAMESPACE';
 
-export class Builder extends DOMBuilder
+export default class Builder extends DOMBuilder
 {
 	constructor(document: Document, element: Element);
 	constructor(document: Document, localName: string);

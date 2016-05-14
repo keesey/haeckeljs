@@ -1,7 +1,7 @@
-import {Range} from '../sets/ranges/Range';
-import {ExtensionalSet as Set} from '../sets/extensional/ExtensionalSet';
+import '../numeric/ranges/Range';
+import '../sets/extensional/ExtensionalSet';
 
-export interface DistanceMatrix<T>
+export interface Matrix<T>
 {
 	hashMap:
 	{
@@ -10,5 +10,5 @@ export interface DistanceMatrix<T>
 			[hash: string]: Range;
 		};
 	};
-	members: Set<T>;
+	members: ExtensionalSet<T>;
 }

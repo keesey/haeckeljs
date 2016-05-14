@@ -1,16 +1,16 @@
-import {Builder} from '../../Builder';
-import {Point} from '../../geometry/points/Point';
-import {create} from '../../geometry/points/create';
-import {precisionEqual} from '../../numeric/precisionEqual';
+import '../../Builder';
+import '../../geometry/points/Point';
+import '../../geometry/points/create';
+import '../../numeric/precisionEqual';
 
-export class PathBuilder implements Builder<string>
+export default class PathBuilder implements Builder<string>
 {
+	public close: boolean = true;
 	private points: Point[] = [];
-	close: boolean = true;
-	add(builder: PathBuilder): PathBuilder;
-	add(point: Point): PathBuilder;
-	add(x: number, y: number): PathBuilder;
-	add(a: PathBuilder | Point | number, y?: number): PathBuilder
+	public add(builder: PathBuilder): PathBuilder;
+	public add(point: Point): PathBuilder;
+	public add(x: number, y: number): PathBuilder;
+	public add(a: PathBuilder | Point | number, y?: number): PathBuilder
 	{
 		if (typeof a === 'number')
 		{
@@ -26,7 +26,7 @@ export class PathBuilder implements Builder<string>
 		}
 		return this;
 	}
-	build(): string
+	public build(): string
 	{
 		const n = this.points.length;
 		if (n === 0)
@@ -72,16 +72,16 @@ export class PathBuilder implements Builder<string>
 		}
 		return result.join('');
 	}
-	empty()
+	public empty()
 	{
 		return this.points.length === 0;
 	}
-	reset()
+	public reset()
 	{
 		this.points = [];
 		return this;
 	}
-	reverse()
+	public reverse()
 	{
 		this.points.reverse();
 		return this;
