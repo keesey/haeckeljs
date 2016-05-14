@@ -1,5 +1,5 @@
-import {Set} from '../../sets/Set';
-import {States} from './weighted/States';
+import './weighted/States';
+import '../../sets/Set';
 
 export interface Inferrer<S extends Set>
 {

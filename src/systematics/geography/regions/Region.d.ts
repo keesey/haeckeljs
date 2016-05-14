@@ -1,3 +1,3 @@
-import {Coordinates} from '../coordinates/Coordinates';
+import '../coordinates/Coordinates';
 
 export type Region = Coordinates[];

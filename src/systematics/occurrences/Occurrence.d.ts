@@ -1,7 +1,7 @@
-import {Model} from '../core/Model';
-import {Range} from '../range/Range';
-import {Region} from '../geography/regions/Region';
-import {Set} from '../../sets/extensional/Set';
+import '../geography/regions/Region';
+import '../../Model';
+import '../../numeric/ranges/Range';
+import '../../sets/extensional/Set';
 
 export interface Occurrence extends Model
 {

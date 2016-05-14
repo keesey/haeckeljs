@@ -1,7 +1,7 @@
-import {Set} from '../../../../sets/extensional/Set';
-import {Model} from '../../../../Model';
-import {Range} from '../../../../numeric/ranges/Range';
-import {Taxic} from '../../taxic/Taxic';
+import '../../taxic/Taxic';
+import '../../../../Model';
+import '../../../../numeric/ranges/Range';
+import '../../../../sets/extensional/Set';
 
 export interface Divergence extends Model
 {

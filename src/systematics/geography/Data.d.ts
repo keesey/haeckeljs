@@ -1,4 +1,4 @@
-import {Data as RegionData} from './region/Data';
+import {Data as RegionData} from './regions/Data';
 
 export interface Data
 {

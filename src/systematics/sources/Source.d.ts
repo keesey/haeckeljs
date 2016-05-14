@@ -1,13 +1,13 @@
+import './Metadata';
 import {Matrix as CharacterMatrix} from '../characters/Matrix';
-import {Divergence} from '../chronology/divergences/Divergence';
+import '../chronology/divergences/Divergence';
+import '../chronology/strata/Stratum';
+import '../nomenclature/Nomenclature';
+import '../phylogeny/Phylogeny';
+import '../taxic/Taxic';
 import {Matrix as DistanceMatrix} from '../../distances/Matrix';
+import '../../sets/Set';
 import {Set as ExtensionalSet} from '../../sets/extensional/Set';
-import {Metadata} from './Metadata';
-import {Nomenclature} from '../nomenclature/Nomenclature';
-import {Phylogeny} from '../phylogeny/Phylogeny';
-import {Set} from '../core/Set';
-import {Stratum} from '../chronology/strata/Stratum';
-import {Taxic} from '../taxic/Taxic';
 
 export interface Source
 {

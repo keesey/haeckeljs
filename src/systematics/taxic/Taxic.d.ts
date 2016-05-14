@@ -1,6 +1,6 @@
-import {Entity} from '../../entities/Entity';
+import '../../entities/Entity';
+import '../../sets/Set';
 import {Set as ExtensionalSet} from '../../sets/extensional/Set';
-import {Set} from '../../sets/Set';
 
 export interface Taxic extends Set
 {

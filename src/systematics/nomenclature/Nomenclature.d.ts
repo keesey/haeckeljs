@@ -1,5 +1,5 @@
-import {Set} from '../../sets/extensional/Set';
-import {Taxic} from '../taxic/Taxic';
+import '../taxic/Taxic';
+import '../../sets/extensional/Set';
 
 export interface Nomenclature
 {

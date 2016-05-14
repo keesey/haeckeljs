@@ -1,7 +1,7 @@
-import {Character} from '../Character';
+import '../Character';
+import '../taxonomy/Taxic';
+import '../../../sets/Set';
 import {Set as ExtensionalSet} from '../../../sets/extensional/Set';
-import {Set} from '../../../sets/Set';
-import {Taxic} from '../taxonomy/Taxic';
 
 export interface Matrix<S extends Set>
 {

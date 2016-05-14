@@ -1,5 +1,5 @@
-import {Model} from '../../../Model';
-import {Range} from '../../../numeric/ranges/Range';
+import '../../../Model';
+import '../../../numeric/ranges/Range';
 
 export interface Stratum extends Model
 {

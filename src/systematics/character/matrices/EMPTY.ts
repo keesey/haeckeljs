@@ -1,12 +1,12 @@
+import './Matrix';
+import '../taxic/Taxic';
 import {EMPTY as EMPTY_LIST} from '../../../lists/EMPTY';
 import {EMPTY as EMPTY_SET} from '../../../sets/EMPTY';
-import {Matrix} from './Matrix';
-import {Set} from '../../../sets/Set';
-import {Taxic} from '../taxonomy/Taxic';
+import '../../../sets/Set';
 
-export const EMPTY = Object.freeze<Matrix<Set>>({
-	characters: EMPTY_SET,
+export default EMPTY = Object.freeze<Matrix<Set>>({
 	characterList: EMPTY_LIST,
+	characters: EMPTY_SET,
 	hashMap: Object.freeze({}),
-	taxon: EMPTY_SET
+	taxon: EMPTY_SET,
 });

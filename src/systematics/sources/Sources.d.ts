@@ -1,5 +1,5 @@
-import {Nomenclature} from '../nomenclature/Nomenclature';
-import {Source} from './Source';
+import './Source';
+import '../nomenclature/Nomenclature';
 
 export interface Sources
 {
