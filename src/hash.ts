@@ -10,7 +10,7 @@
  * 	If it is an array, then this function is applied iteratively to all
  * 	members. Otherwise, a JSON string is used.
  */
-export function hash(object: any): string
+export default function hash(object: any): string
 {
 	if (object === undefined || object === null)
 	{

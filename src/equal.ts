@@ -1,6 +1,6 @@
-import {hash} from './hash';
+import './hash';
 
-export function equal(a: any, b: any): boolean
+export default function equal(a: any, b: any): boolean
 {
 	if (a === b)
 	{

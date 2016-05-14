@@ -13,7 +13,6 @@ export class Gulpfile
 		const del = require('del');
 		return del(['./dist/**'], cb);
 	}
-
 	@Task('lint:ts')
 	lintTS()
 	{
