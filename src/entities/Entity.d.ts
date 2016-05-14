@@ -1,4 +1,4 @@
-import {Model} from '../Model';
+import '../Model';
 
 export interface Entity extends Model
 {

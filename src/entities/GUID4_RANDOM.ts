@@ -1,3 +1,3 @@
-import {seedRandom} from '../numeric/seedRandom';
+import '../numeric/seedRandom';
 
-export const GUID4_RANDOM = seedRandom('UUID', 4);
+export default GUID4_RANDOM = seedRandom('UUID', 4);
