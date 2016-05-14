@@ -1,7 +1,7 @@
-import {Set} from './Set';
-import {list} from './list';
+import './Set';
+import './list';
 
-export function singleMember<T>(set: Set<T>): T
+export default function singleMember<T>(set: Set<T>): T
 {
 	if (set.size !== 1)
 	{

@@ -1,7 +1,7 @@
-import {Builder} from './Builder';
-import {Set} from './Set';
+import './Builder';
+import './Set';
 
-export function map<X, Y>(set: Set<X>, f: (element: X) => Y): Set<Y>
+export default function map<X, Y>(set: Set<X>, f: (element: X) => Y): Set<Y>
 {
 	if (set.size === Infinity)
 	{

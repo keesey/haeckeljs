@@ -1,13 +1,13 @@
-import {ZERO} from '../../numeric/ranges/ZERO';
-import {ZERO_TO_ONE} from '../../numeric/ranges/ZERO_TO_ONE';
-import {ONE} from '../../numeric/ranges/ONE';
-import {Range} from '../../numeric/ranges/Range';
-import {EMPTY} from '../EMPTY';
-import {Set} from './Set';
-import {equal} from '../../equal';
-import {intersection} from './intersection';
+import './Set';
+import './intersection';
+import '../EMPTY';
+import '../../equal';
+import '../../numeric/ranges/ONE';
+import '../../numeric/ranges/Range';
+import '../../numeric/ranges/ZERO';
+import '../../numeric/ranges/ZERO_TO_ONE';
 
-export function distance<T>(a: Set<T>, b: Set<T>): Range
+export default function distance<T>(a: Set<T>, b: Set<T>): Range
 {
 	if (a === null || b === null)
 	{

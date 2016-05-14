@@ -1,6 +1,6 @@
-import {Set} from './Set';
+import './Set';
 
-export function forEach<T>(set: Set<T>, f: (element: T) => any)
+export default function forEach<T>(set: Set<T>, f: (element: T) => any)
 {
 	if (set.size === Infinity)
 	{

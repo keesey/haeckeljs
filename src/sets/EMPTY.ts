@@ -1,7 +1,7 @@
-import {EmptySet} from './EmptySet';
-import {Point} from '../geometry/points/Point';
+import './EmptySet';
+import '../geometry/points/Point';
 
-export const EMPTY: EmptySet = (function ()
+export default EMPTY: EmptySet = (function ()
 {
 	const filter = (element: any) => false;
 	const empty: EmptySet =
@@ -36,5 +36,5 @@ export const EMPTY: EmptySet = (function ()
 			y2: NaN,
 		};
 	empty.units = empty.entities = empty;
-	return Object.freeze(empty);
+	return Object.freeze<EmptySet>(empty);
 })();

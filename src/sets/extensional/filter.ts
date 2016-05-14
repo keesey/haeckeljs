@@ -1,7 +1,7 @@
-import {Builder} from './Builder';
-import {Set} from './Set';
+import './Builder';
+import './Set';
 
-export function filter<T>(set: Set<T>, f: (element: T) => boolean): Set<T>
+export default function filter<T>(set: Set<T>, f: (element: T) => boolean): Set<T>
 {
 	if (set.size === Infinity)
 	{

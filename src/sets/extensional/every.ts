@@ -1,6 +1,6 @@
-import {Set} from './Set';
+import './Set';
 
-export function every<T>(set: Set<T>, f: (element: T) => boolean): boolean
+export default function every<T>(set: Set<T>, f: (element: T) => boolean): boolean
 {
 	if (set.size === Infinity)
 	{

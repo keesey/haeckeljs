@@ -1,6 +1,6 @@
-import {Set} from './Set';
+import './Set';
 
-export function some<T>(set: Set<T>, f: (element: T) => boolean): boolean
+export default function some<T>(set: Set<T>, f: (element: T) => boolean): boolean
 {
 	if (set.size === Infinity)
 	{

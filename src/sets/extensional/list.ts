@@ -1,6 +1,6 @@
-import {Set} from './Set';
+import './Set';
 
-export function list<T>(set: Set<T>): T[]
+export default function list<T>(set: Set<T>): T[]
 {
 	if (set.size === Infinity)
 	{

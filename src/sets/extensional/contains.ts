@@ -1,7 +1,7 @@
-import {Set} from './Set';
-import {hash} from '../../hash';
+import './Set';
+import '../../hash';
 
-export function contains<T>(set: Set<T>, element: T): boolean
+export default function contains<T>(set: Set<T>, element: T): boolean
 {
 	if (set.size === Infinity)
 	{
